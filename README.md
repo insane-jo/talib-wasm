@@ -137,4 +137,4 @@ MAMA  = 7
 T3    = 8
 ```
 ## Support developer
-If you like this package - support me on [Buy me a coffee](buymeacoff.ee/oItObEGUm).
+**_If you like this package - support me on [Buy me a coffee](buymeacoff.ee/oItObEGUm)._**
