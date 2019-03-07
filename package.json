@@ -1,0 +1,32 @@
+{
+  "name": "talib-wasm",
+  "version": "1.0.0",
+  "description": "ta-lib.org package parsed with emscripten, that can be added to browser",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo 'no tests specified'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insane-jo/talib-wasm.git"
+  },
+  "keywords": [
+    "talib",
+    "ta-lib",
+    "emscripten",
+    "wasm",
+    "technical",
+    "analysis",
+    "bower",
+    "browser",
+    "webassembly",
+    "stocks",
+    "stock market"
+  ],
+  "author": "insane_jo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/insane-jo/talib-wasm/issues"
+  },
+  "homepage": "https://github.com/insane-jo/talib-wasm#readme"
+}
