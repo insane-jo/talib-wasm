@@ -7,7 +7,7 @@ To install the most recent release from npm, run:
 
 ```npm install talib-wasm --save```
 
-##Examples
+## Examples
 ### Simple usage
 ```javascript
 require('talib-wasm')
@@ -50,7 +50,7 @@ Output:
     returnCodeName: 'TA_SUCCESS'
 }
 ```
-###Get all function definitions
+### Get all function definitions
 ```
 require('talib-wasm')
     .then((funcs) => {
@@ -123,7 +123,7 @@ Output:
   ...
 }
 ```
-###MA Types
+### MA Types
 Some indicators require or accept a optInMAType property:
 ```
 SMA   = 0
@@ -136,5 +136,5 @@ KAMA  = 6
 MAMA  = 7
 T3    = 8
 ```
-##Support developer
+## Support developer
 If you like this package - support me on [Buy me a coffee](buymeacoff.ee/oItObEGUm).
