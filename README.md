@@ -2,6 +2,8 @@
 An emscripten wrapper around TA-LIB, that allows you to use technical analysis library from [ta-lib.org](https://ta-lib.org) with webpack or inside node.js.
 `Without any dependencies.`
 
+[![Support developer](readme-assets/buymeacoffee.png)](https://buymeacoff.ee/oItObEGUm)
+
 ##Installation
 To install the most recent release from npm, run:
 
