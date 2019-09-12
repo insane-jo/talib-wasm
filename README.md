@@ -4,7 +4,7 @@ An emscripten wrapper around TA-LIB, that allows you to use technical analysis l
 
 [![Support developer](readme-assets/buymeacoffee.png)](https://buymeacoff.ee/oItObEGUm)
 
-##Installation
+## Installation
 To install the most recent release from npm, run:
 
 ```npm install talib-wasm --save```
@@ -138,5 +138,16 @@ KAMA  = 6
 MAMA  = 7
 T3    = 8
 ```
+
+## Modules versions
+
+```
+emcc - (Emscripten gcc/clang-like replacement) 1.38.44
+talib - 1.1.2
+node - 12.10.0
+```
+
+
+
 ## Support developer
 **_If you like this package - support me on [Buy me a coffee](https://buymeacoff.ee/oItObEGUm)._**
