@@ -141,12 +141,12 @@ T3    = 8
 
 ## Modules versions
 
+### Version 1.0.3
 ```
 emcc - (Emscripten gcc/clang-like replacement) 1.38.44
 talib - 1.1.2
 node - 12.10.0
 ```
-
 
 
 ## Support developer
