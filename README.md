@@ -146,6 +146,7 @@ T3    = 8
 emcc - (Emscripten gcc/clang-like replacement) 1.38.44
 talib - 1.1.2
 node - 12.10.0
+binaryen - 89
 ```
 
 
