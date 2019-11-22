@@ -141,6 +141,13 @@ T3    = 8
 
 ## Modules versions
 
+### Version 1.0.5
+```
+emcc - (Emscripten gcc/clang-like replacement) 1.39.3
+talib - 1.1.3
+node - 13.2.0
+```
+
 ### Version 1.0.4
 ```
 emcc - (Emscripten gcc/clang-like replacement) 1.39.1
