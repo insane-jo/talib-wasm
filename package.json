@@ -1,6 +1,6 @@
 {
   "name": "talib-wasm",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "ta-lib.org package parsed with emscripten, that can be added to browser",
   "main": "main.js",
   "scripts": {
