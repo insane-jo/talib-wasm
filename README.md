@@ -139,7 +139,22 @@ MAMA  = 7
 T3    = 8
 ```
 
+## Local build
+
+You need manually install [emscripten](https://emscripten.org/) to build this package.
+
+```
+npm run build
+```
+
 ## Modules versions
+
+### Version 1.1.0
+```
+emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 1.39.13
+talib - 1.1.3
+node - 14.0.0
+```
 
 ### Version 1.0.6
 ```
