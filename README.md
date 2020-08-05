@@ -149,6 +149,13 @@ npm run build
 
 ## Modules versions
 
+### Version 1.1.3
+```
+emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 1.40.1
+talib - 1.1.3
+node - 14.7.0
+```
+
 ### Version 1.1.2
 ```
 emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 1.39.18
