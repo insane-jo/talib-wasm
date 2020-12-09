@@ -32,10 +32,16 @@ enum TAReturnCodes {
     TA_UNKNOWN_ERR = 0xFFFF
 }
 
+interface ITACalculationResult {
+    [p: string]: number[];
+}
+
 interface ITACalculationReturnValue {
     returnCode: TAReturnCodes;
     returnCodeName: keyof typeof TAReturnCodes;
 }
+
+type TAResult = ITACalculationResult & ITACalculationReturnValue;
 
 type TAFunctions = {
     ACOS(opts: {
@@ -1413,11 +1419,11 @@ type TAFunctions = {
         High: number[],
         Low: number[],
         Close: number[],
-        optInFastKPeriod?: number,
-        optInSlowKPeriod?: number,
-        optInSlowKMA?: MATypeEnum,
-        optInSlowDPeriod?: number,
-        optInSlowDMA?: MATypeEnum,
+        optInFast_KPeriod?: number,
+        optInSlow_KPeriod?: number,
+        optInSlow_KMA?: MATypeEnum,
+        optInSlow_DPeriod?: number,
+        optInSlow_DMA?: MATypeEnum,
     }): {
         outSlowK: number[],outSlowD: number[]
     } & ITACalculationReturnValue,
@@ -1427,9 +1433,9 @@ type TAFunctions = {
         High: number[],
         Low: number[],
         Close: number[],
-        optInFastKPeriod?: number,
-        optInFastDPeriod?: number,
-        optInFastDMA?: MATypeEnum,
+        optInFast_KPeriod?: number,
+        optInFast_DPeriod?: number,
+        optInFast_DMA?: MATypeEnum,
     }): {
         outFastK: number[],outFastD: number[]
     } & ITACalculationReturnValue,
@@ -1438,9 +1444,9 @@ type TAFunctions = {
         begIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
-        optInFastKPeriod?: number,
-        optInFastDPeriod?: number,
-        optInFastDMA?: MATypeEnum,
+        optInFast_KPeriod?: number,
+        optInFast_DPeriod?: number,
+        optInFast_DMA?: MATypeEnum,
     }): {
         outFastK: number[],outFastD: number[]
     } & ITACalculationReturnValue,
