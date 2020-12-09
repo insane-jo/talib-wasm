@@ -149,6 +149,16 @@ npm run build
 
 ## Modules versions
 
+### Version 2.0.1
+Added index.d.ts for typescript typings support.
+```
+emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 2.0.0
+clang version 12.0.0
+talib version - 1.1.3
+node (EMSDK_NODE) version - 14.8.0
+python (EMSDK_PYTHON) version - 3.8.5
+```
+
 ### Version 2.0.0
 Switch to emscripten v2.0.0
 ```
