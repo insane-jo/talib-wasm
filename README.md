@@ -152,7 +152,7 @@ npm run build
 
 ## Modules versions
 
-### Version 2.0.1
+### Versions 2.0.1 - 2.0.3
 Added index.d.ts for typescript typings support.
 ```
 emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 2.0.0
