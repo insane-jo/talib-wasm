@@ -152,8 +152,8 @@ npm run build
 
 ## Modules versions
 
-### Versions 2.0.1 - 2.0.3
-Added index.d.ts for typescript typings support.
+### Versions 2.0.1 - 2.0.5
+Added main.d.ts file for typescript typings support.
 ```
 emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 2.0.0
 clang version 12.0.0
