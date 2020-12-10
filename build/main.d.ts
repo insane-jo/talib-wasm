@@ -1597,4 +1597,6 @@ type TAFunctions = {
     describeFunctions(): any;
 };
 
-export = Promise<TAFunctions>;
+const funcsPromise: Promise<TAFunctions>;
+
+export = funcsPromise;

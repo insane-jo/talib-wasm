@@ -152,7 +152,7 @@ npm run build
 
 ## Modules versions
 
-### Versions 2.0.1 - 2.0.5
+### Versions 2.0.1 - 2.0.6
 Added main.d.ts file for typescript typings support.
 ```
 emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 2.0.0
