@@ -1597,6 +1597,4 @@ type TAFunctions = {
     describeFunctions(): any;
 };
 
-function defaultExportFunction(): Promise<TAFunctions>;
-
-export = defaultExportFunction;
+export = Promise<TAFunctions>;
