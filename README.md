@@ -3,8 +3,6 @@ An emscripten wrapper around TA-LIB, that allows you to use technical analysis l
 
 Supports typescript types.
 
-`Without any dependencies.`
-
 [![Support developer](readme-assets/buymeacoffee.png)](https://buymeacoff.ee/oItObEGUm)
 
 ## Installation
@@ -151,6 +149,22 @@ npm run build
 ```
 
 ## Modules versions
+
+### Version 3.0.0
+* Result arrays now not contain blank fields at the end. Length of result array in version 2.x can be different with version 3.x
+* Result arrays now are not Float64Array.
+* Fixed memory leaks on functions calls.
+* Added `lookback` functions to get lookback info. Very useful to get difference between input and output arrays lengths.
+* Talib C++ sources from ta-lib.org now in project.
+* Added tests (uses jest).
+
+```
+emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 2.0.10
+clang version 12.0.0 (/opt/s/w/ir/cache/git/chromium.googlesource.com-external-github.com-llvm-llvm--project 445289aa63e1b82b9eea6497fb2d0443813a9d4e)
+node (EMSDK_NODE) version - 15.3.0
+python (EMSDK_PYTHON) version - 3.8.5
+```
+
 
 ### Versions 2.0.1 - 2.0.6
 Added main.d.ts file for typescript typings support.

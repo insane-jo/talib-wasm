@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "pretty": true,
+    "types": [
+      "jest",
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "sourceMap": true,
+    "target": "es6",
+    "baseUrl": "./",
+    "preserveConstEnums": true
+  },
+  "exclude": [
+    "node_modules",
+    "test"
+  ]
+}

@@ -46,15 +46,19 @@ type TAResult = ITACalculationResult & ITACalculationReturnValue;
 type TAFunctions = {
     ACOS(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ACOSLookback(opts: {
+
+    }): number,
     AD(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
@@ -62,19 +66,27 @@ type TAFunctions = {
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ADLookback(opts: {
+
+    }): number,
     ADD(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal0: number[],
         inReal1: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ADDLookback(opts: {
+
+    }): number,
     ADOSC(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
@@ -83,84 +95,123 @@ type TAFunctions = {
         optInSlowPeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ADOSCLookback(opts: {
+        optInFastPeriod?: number,
+        optInSlowPeriod?: number,
+    }): number,
     ADX(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ADXLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     ADXR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ADXRLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     APO(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInFastPeriod?: number,
         optInSlowPeriod?: number,
         optInMAType?: MATypeEnum,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    APOLookback(opts: {
+        optInFastPeriod?: number,
+        optInSlowPeriod?: number,
+        optInMAType?: MATypeEnum,
+    }): number,
     AROON(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         optInTimePeriod?: number,
     }): {
         outAroonDown: number[],outAroonUp: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    AROONLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     AROONOSC(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    AROONOSCLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     ASIN(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ASINLookback(opts: {
+
+    }): number,
     ATAN(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ATANLookback(opts: {
+
+    }): number,
     ATR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ATRLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     AVGPRICE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -168,10 +219,14 @@ type TAFunctions = {
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    AVGPRICELookback(opts: {
+
+    }): number,
     BBANDS(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
         optInDeviationsup?: number,
@@ -179,19 +234,30 @@ type TAFunctions = {
         optInMAType?: MATypeEnum,
     }): {
         outRealUpperBand: number[],outRealMiddleBand: number[],outRealLowerBand: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    BBANDSLookback(opts: {
+        optInTimePeriod?: number,
+        optInDeviationsup?: number,
+        optInDeviationsdown?: number,
+        optInMAType?: MATypeEnum,
+    }): number,
     BETA(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal0: number[],
         inReal1: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    BETALookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     BOP(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -199,20 +265,28 @@ type TAFunctions = {
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    BOPLookback(opts: {
+
+    }): number,
     CCI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CCILookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     CDL2CROWS(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -220,10 +294,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDL2CROWSLookback(opts: {
+
+    }): number,
     CDL3BLACKCROWS(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -231,10 +309,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDL3BLACKCROWSLookback(opts: {
+
+    }): number,
     CDL3INSIDE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -242,10 +324,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDL3INSIDELookback(opts: {
+
+    }): number,
     CDL3LINESTRIKE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -253,10 +339,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDL3LINESTRIKELookback(opts: {
+
+    }): number,
     CDL3OUTSIDE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -264,10 +354,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDL3OUTSIDELookback(opts: {
+
+    }): number,
     CDL3STARSINSOUTH(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -275,10 +369,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDL3STARSINSOUTHLookback(opts: {
+
+    }): number,
     CDL3WHITESOLDIERS(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -286,10 +384,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDL3WHITESOLDIERSLookback(opts: {
+
+    }): number,
     CDLABANDONEDBABY(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -297,10 +399,14 @@ type TAFunctions = {
         optInPenetration?: number,
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLABANDONEDBABYLookback(opts: {
+        optInPenetration?: number,
+    }): number,
     CDLADVANCEBLOCK(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -308,10 +414,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLADVANCEBLOCKLookback(opts: {
+
+    }): number,
     CDLBELTHOLD(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -319,10 +429,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLBELTHOLDLookback(opts: {
+
+    }): number,
     CDLBREAKAWAY(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -330,10 +444,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLBREAKAWAYLookback(opts: {
+
+    }): number,
     CDLCLOSINGMARUBOZU(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -341,10 +459,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLCLOSINGMARUBOZULookback(opts: {
+
+    }): number,
     CDLCONCEALBABYSWALL(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -352,10 +474,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLCONCEALBABYSWALLLookback(opts: {
+
+    }): number,
     CDLCOUNTERATTACK(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -363,10 +489,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLCOUNTERATTACKLookback(opts: {
+
+    }): number,
     CDLDARKCLOUDCOVER(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -374,10 +504,14 @@ type TAFunctions = {
         optInPenetration?: number,
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLDARKCLOUDCOVERLookback(opts: {
+        optInPenetration?: number,
+    }): number,
     CDLDOJI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -385,10 +519,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLDOJILookback(opts: {
+
+    }): number,
     CDLDOJISTAR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -396,10 +534,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLDOJISTARLookback(opts: {
+
+    }): number,
     CDLDRAGONFLYDOJI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -407,10 +549,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLDRAGONFLYDOJILookback(opts: {
+
+    }): number,
     CDLENGULFING(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -418,10 +564,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLENGULFINGLookback(opts: {
+
+    }): number,
     CDLEVENINGDOJISTAR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -429,10 +579,14 @@ type TAFunctions = {
         optInPenetration?: number,
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLEVENINGDOJISTARLookback(opts: {
+        optInPenetration?: number,
+    }): number,
     CDLEVENINGSTAR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -440,10 +594,14 @@ type TAFunctions = {
         optInPenetration?: number,
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLEVENINGSTARLookback(opts: {
+        optInPenetration?: number,
+    }): number,
     CDLGAPSIDESIDEWHITE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -451,10 +609,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLGAPSIDESIDEWHITELookback(opts: {
+
+    }): number,
     CDLGRAVESTONEDOJI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -462,10 +624,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLGRAVESTONEDOJILookback(opts: {
+
+    }): number,
     CDLHAMMER(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -473,10 +639,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLHAMMERLookback(opts: {
+
+    }): number,
     CDLHANGINGMAN(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -484,10 +654,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLHANGINGMANLookback(opts: {
+
+    }): number,
     CDLHARAMI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -495,10 +669,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLHARAMILookback(opts: {
+
+    }): number,
     CDLHARAMICROSS(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -506,10 +684,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLHARAMICROSSLookback(opts: {
+
+    }): number,
     CDLHIGHWAVE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -517,10 +699,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLHIGHWAVELookback(opts: {
+
+    }): number,
     CDLHIKKAKE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -528,10 +714,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLHIKKAKELookback(opts: {
+
+    }): number,
     CDLHIKKAKEMOD(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -539,10 +729,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLHIKKAKEMODLookback(opts: {
+
+    }): number,
     CDLHOMINGPIGEON(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -550,10 +744,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLHOMINGPIGEONLookback(opts: {
+
+    }): number,
     CDLIDENTICAL3CROWS(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -561,10 +759,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLIDENTICAL3CROWSLookback(opts: {
+
+    }): number,
     CDLINNECK(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -572,10 +774,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLINNECKLookback(opts: {
+
+    }): number,
     CDLINVERTEDHAMMER(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -583,10 +789,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLINVERTEDHAMMERLookback(opts: {
+
+    }): number,
     CDLKICKING(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -594,10 +804,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLKICKINGLookback(opts: {
+
+    }): number,
     CDLKICKINGBYLENGTH(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -605,10 +819,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLKICKINGBYLENGTHLookback(opts: {
+
+    }): number,
     CDLLADDERBOTTOM(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -616,10 +834,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLLADDERBOTTOMLookback(opts: {
+
+    }): number,
     CDLLONGLEGGEDDOJI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -627,10 +849,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLLONGLEGGEDDOJILookback(opts: {
+
+    }): number,
     CDLLONGLINE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -638,10 +864,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLLONGLINELookback(opts: {
+
+    }): number,
     CDLMARUBOZU(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -649,10 +879,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLMARUBOZULookback(opts: {
+
+    }): number,
     CDLMATCHINGLOW(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -660,10 +894,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLMATCHINGLOWLookback(opts: {
+
+    }): number,
     CDLMATHOLD(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -671,10 +909,14 @@ type TAFunctions = {
         optInPenetration?: number,
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLMATHOLDLookback(opts: {
+        optInPenetration?: number,
+    }): number,
     CDLMORNINGDOJISTAR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -682,10 +924,14 @@ type TAFunctions = {
         optInPenetration?: number,
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLMORNINGDOJISTARLookback(opts: {
+        optInPenetration?: number,
+    }): number,
     CDLMORNINGSTAR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -693,10 +939,14 @@ type TAFunctions = {
         optInPenetration?: number,
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLMORNINGSTARLookback(opts: {
+        optInPenetration?: number,
+    }): number,
     CDLONNECK(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -704,10 +954,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLONNECKLookback(opts: {
+
+    }): number,
     CDLPIERCING(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -715,10 +969,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLPIERCINGLookback(opts: {
+
+    }): number,
     CDLRICKSHAWMAN(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -726,10 +984,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLRICKSHAWMANLookback(opts: {
+
+    }): number,
     CDLRISEFALL3METHODS(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -737,10 +999,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLRISEFALL3METHODSLookback(opts: {
+
+    }): number,
     CDLSEPARATINGLINES(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -748,10 +1014,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLSEPARATINGLINESLookback(opts: {
+
+    }): number,
     CDLSHOOTINGSTAR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -759,10 +1029,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLSHOOTINGSTARLookback(opts: {
+
+    }): number,
     CDLSHORTLINE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -770,10 +1044,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLSHORTLINELookback(opts: {
+
+    }): number,
     CDLSPINNINGTOP(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -781,10 +1059,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLSPINNINGTOPLookback(opts: {
+
+    }): number,
     CDLSTALLEDPATTERN(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -792,10 +1074,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLSTALLEDPATTERNLookback(opts: {
+
+    }): number,
     CDLSTICKSANDWICH(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -803,10 +1089,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLSTICKSANDWICHLookback(opts: {
+
+    }): number,
     CDLTAKURI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -814,10 +1104,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLTAKURILookback(opts: {
+
+    }): number,
     CDLTASUKIGAP(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -825,10 +1119,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLTASUKIGAPLookback(opts: {
+
+    }): number,
     CDLTHRUSTING(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -836,10 +1134,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLTHRUSTINGLookback(opts: {
+
+    }): number,
     CDLTRISTAR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -847,10 +1149,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLTRISTARLookback(opts: {
+
+    }): number,
     CDLUNIQUE3RIVER(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -858,10 +1164,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLUNIQUE3RIVERLookback(opts: {
+
+    }): number,
     CDLUPSIDEGAP2CROWS(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -869,10 +1179,14 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLUPSIDEGAP2CROWSLookback(opts: {
+
+    }): number,
     CDLXSIDEGAP3METHODS(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         Open: number[],
         High: number[],
         Low: number[],
@@ -880,225 +1194,336 @@ type TAFunctions = {
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CDLXSIDEGAP3METHODSLookback(opts: {
+
+    }): number,
     CEIL(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CEILLookback(opts: {
+
+    }): number,
     CMO(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CMOLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     CORREL(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal0: number[],
         inReal1: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    CORRELLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     COS(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    COSLookback(opts: {
+
+    }): number,
     COSH(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    COSHLookback(opts: {
+
+    }): number,
     DEMA(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    DEMALookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     DIV(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal0: number[],
         inReal1: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    DIVLookback(opts: {
+
+    }): number,
     DX(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    DXLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     EMA(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    EMALookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     EXP(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    EXPLookback(opts: {
+
+    }): number,
     FLOOR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    FLOORLookback(opts: {
+
+    }): number,
     HT_DCPERIOD(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    HT_DCPERIODLookback(opts: {
+
+    }): number,
     HT_DCPHASE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    HT_DCPHASELookback(opts: {
+
+    }): number,
     HT_PHASOR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outInPhase: number[],outQuadrature: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    HT_PHASORLookback(opts: {
+
+    }): number,
     HT_SINE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outSine: number[],outLeadSine: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    HT_SINELookback(opts: {
+
+    }): number,
     HT_TRENDLINE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    HT_TRENDLINELookback(opts: {
+
+    }): number,
     HT_TRENDMODE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    HT_TRENDMODELookback(opts: {
+
+    }): number,
     KAMA(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    KAMALookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     LINEARREG(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    LINEARREGLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     LINEARREG_ANGLE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    LINEARREG_ANGLELookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     LINEARREG_INTERCEPT(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    LINEARREG_INTERCEPTLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     LINEARREG_SLOPE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    LINEARREG_SLOPELookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     LN(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    LNLookback(opts: {
+
+    }): number,
     LOG10(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    LOG10Lookback(opts: {
+
+    }): number,
     MA(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
         optInMAType?: MATypeEnum,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MALookback(opts: {
+        optInTimePeriod?: number,
+        optInMAType?: MATypeEnum,
+    }): number,
     MACD(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInFastPeriod?: number,
         optInSlowPeriod?: number,
         optInSignalPeriod?: number,
     }): {
         outMACD: number[],outMACDSignal: number[],outMACDHist: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MACDLookback(opts: {
+        optInFastPeriod?: number,
+        optInSlowPeriod?: number,
+        optInSignalPeriod?: number,
+    }): number,
     MACDEXT(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInFastPeriod?: number,
         optInFastMA?: MATypeEnum,
@@ -1108,27 +1533,45 @@ type TAFunctions = {
         optInSignalMA?: MATypeEnum,
     }): {
         outMACD: number[],outMACDSignal: number[],outMACDHist: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MACDEXTLookback(opts: {
+        optInFastPeriod?: number,
+        optInFastMA?: MATypeEnum,
+        optInSlowPeriod?: number,
+        optInSlowMA?: MATypeEnum,
+        optInSignalPeriod?: number,
+        optInSignalMA?: MATypeEnum,
+    }): number,
     MACDFIX(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInSignalPeriod?: number,
     }): {
         outMACD: number[],outMACDSignal: number[],outMACDHist: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MACDFIXLookback(opts: {
+        optInSignalPeriod?: number,
+    }): number,
     MAMA(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInFastLimit?: number,
         optInSlowLimit?: number,
     }): {
         outMAMA: number[],outFAMA: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MAMALookback(opts: {
+        optInFastLimit?: number,
+        optInSlowLimit?: number,
+    }): number,
     MAVP(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         inPeriods: number[],
         optInMinimumPeriod?: number,
@@ -1136,35 +1579,53 @@ type TAFunctions = {
         optInMAType?: MATypeEnum,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MAVPLookback(opts: {
+        optInMinimumPeriod?: number,
+        optInMaximumPeriod?: number,
+        optInMAType?: MATypeEnum,
+    }): number,
     MAX(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MAXLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MAXINDEX(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MAXINDEXLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MEDPRICE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MEDPRICELookback(opts: {
+
+    }): number,
     MFI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
@@ -1172,193 +1633,284 @@ type TAFunctions = {
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MFILookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MIDPOINT(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MIDPOINTLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MIDPRICE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MIDPRICELookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MIN(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MINLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MININDEX(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outInteger: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MININDEXLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MINMAX(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outMin: number[],outMax: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MINMAXLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MINMAXINDEX(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outMinIdx: number[],outMaxIdx: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MINMAXINDEXLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MINUS_DI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MINUS_DILookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MINUS_DM(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MINUS_DMLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MOM(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MOMLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     MULT(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal0: number[],
         inReal1: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    MULTLookback(opts: {
+
+    }): number,
     NATR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    NATRLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     OBV(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         Volume: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    OBVLookback(opts: {
+
+    }): number,
     PLUS_DI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    PLUS_DILookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     PLUS_DM(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    PLUS_DMLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     PPO(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInFastPeriod?: number,
         optInSlowPeriod?: number,
         optInMAType?: MATypeEnum,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    PPOLookback(opts: {
+        optInFastPeriod?: number,
+        optInSlowPeriod?: number,
+        optInMAType?: MATypeEnum,
+    }): number,
     ROC(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ROCLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     ROCP(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ROCPLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     ROCR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ROCRLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     ROCR100(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ROCR100Lookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     RSI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    RSILookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     SAR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         optInAccelerationFactor?: number,
         optInAFMaximum?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    SARLookback(opts: {
+        optInAccelerationFactor?: number,
+        optInAFMaximum?: number,
+    }): number,
     SAREXT(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         optInStartValue?: number,
@@ -1371,51 +1923,83 @@ type TAFunctions = {
         optInAFMaxShort?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    SAREXTLookback(opts: {
+        optInStartValue?: number,
+        optInOffsetonReverse?: number,
+        optInAFInitLong?: number,
+        optInAFLong?: number,
+        optInAFMaxLong?: number,
+        optInAFInitShort?: number,
+        optInAFShort?: number,
+        optInAFMaxShort?: number,
+    }): number,
     SIN(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    SINLookback(opts: {
+
+    }): number,
     SINH(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    SINHLookback(opts: {
+
+    }): number,
     SMA(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    SMALookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     SQRT(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    SQRTLookback(opts: {
+
+    }): number,
     STDDEV(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
         optInDeviations?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    STDDEVLookback(opts: {
+        optInTimePeriod?: number,
+        optInDeviations?: number,
+    }): number,
     STOCH(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
@@ -1426,10 +2010,18 @@ type TAFunctions = {
         optInSlow_DMA?: MATypeEnum,
     }): {
         outSlowK: number[],outSlowD: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    STOCHLookback(opts: {
+        optInFast_KPeriod?: number,
+        optInSlow_KPeriod?: number,
+        optInSlow_KMA?: MATypeEnum,
+        optInSlow_DPeriod?: number,
+        optInSlow_DMA?: MATypeEnum,
+    }): number,
     STOCHF(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
@@ -1438,10 +2030,16 @@ type TAFunctions = {
         optInFast_DMA?: MATypeEnum,
     }): {
         outFastK: number[],outFastD: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    STOCHFLookback(opts: {
+        optInFast_KPeriod?: number,
+        optInFast_DPeriod?: number,
+        optInFast_DMA?: MATypeEnum,
+    }): number,
     STOCHRSI(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
         optInFast_KPeriod?: number,
@@ -1449,104 +2047,156 @@ type TAFunctions = {
         optInFast_DMA?: MATypeEnum,
     }): {
         outFastK: number[],outFastD: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    STOCHRSILookback(opts: {
+        optInTimePeriod?: number,
+        optInFast_KPeriod?: number,
+        optInFast_DPeriod?: number,
+        optInFast_DMA?: MATypeEnum,
+    }): number,
     SUB(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal0: number[],
         inReal1: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    SUBLookback(opts: {
+
+    }): number,
     SUM(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    SUMLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     T3(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
         optInVolumeFactor?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    T3Lookback(opts: {
+        optInTimePeriod?: number,
+        optInVolumeFactor?: number,
+    }): number,
     TAN(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    TANLookback(opts: {
+
+    }): number,
     TANH(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    TANHLookback(opts: {
+
+    }): number,
     TEMA(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    TEMALookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     TRANGE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    TRANGELookback(opts: {
+
+    }): number,
     TRIMA(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    TRIMALookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     TRIX(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    TRIXLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     TSF(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    TSFLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     TYPPRICE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    TYPPRICELookback(opts: {
+
+    }): number,
     ULTOSC(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
@@ -1555,44 +2205,67 @@ type TAFunctions = {
         optInThirdPeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    ULTOSCLookback(opts: {
+        optInFirstPeriod?: number,
+        optInSecondPeriod?: number,
+        optInThirdPeriod?: number,
+    }): number,
     VAR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
         optInDeviations?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    VARLookback(opts: {
+        optInTimePeriod?: number,
+        optInDeviations?: number,
+    }): number,
     WCLPRICE(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
 
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    WCLPRICELookback(opts: {
+
+    }): number,
     WILLR(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         High: number[],
         Low: number[],
         Close: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    WILLRLookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
     WMA(opts: {
         startIdx?: number,
-        begIdx?: number,
+        endIdx?: number,
         inReal: number[],
         optInTimePeriod?: number,
     }): {
         outReal: number[]
-    } & ITACalculationReturnValue,
+    } & ITACalculationReturnValue
+
+    WMALookback(opts: {
+        optInTimePeriod?: number,
+    }): number,
 
     describeFunctions(): any;
 };

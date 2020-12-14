@@ -10,9 +10,10 @@ const ARRAY_TYPES = [
     'Integer Array'
 ];
 
-function cArray(Module, size) {
+function cArray(Module, sizeOrData) {
+    const size = Array.isArray(sizeOrData) ? sizeOrData.length : sizeOrData;
     const offset = Module._malloc(size * 8);
-    Module.HEAPF64.set(new Float64Array(size), offset / 8);
+    Module.HEAPF64.set(new Float64Array(sizeOrData), offset / 8);
     return {
         "data": Module.HEAPF64.subarray(offset / 8, offset / 8 + size),
         "offset": offset
@@ -21,10 +22,12 @@ function cArray(Module, size) {
 
 module.exports = (Module, functionDescr) => {
     let wrappedFunction;
+    let wrappedFunctionLookback;
 
     const Abbreviation = functionDescr.Abbreviation[0];
 
     const callCwrapArgs = [];
+    const callCwrapArgsLookback = [];
 
     const RequiredInputArguments = ((functionDescr.RequiredInputArguments || [])[0] || {
         RequiredInputArgument: []
@@ -51,9 +54,11 @@ module.exports = (Module, functionDescr) => {
         .map((current) => {
             const typeIsArray = ARRAY_TYPES.indexOf(current.Type) !== -1;
             if (typeIsArray) {
-                callCwrapArgs.push('[number]')
+                callCwrapArgs.push('[number]');
+                callCwrapArgsLookback.push('[number]');
             } else {
-                callCwrapArgs.push('number')
+                callCwrapArgs.push('number');
+                callCwrapArgsLookback.push('number');
             }
 
             return {
@@ -88,6 +93,11 @@ module.exports = (Module, functionDescr) => {
         callCwrapArgs
     );
 
+    const cwrapFunctionLookback = Module.cwrap(`TA_${Abbreviation}_Lookback`,
+        'number',
+        callCwrapArgsLookback
+    );
+
     wrappedFunction = (optionsToCall) => {
         const dataToCallFunction = {
             ...optionsToCall
@@ -119,15 +129,14 @@ module.exports = (Module, functionDescr) => {
         }
 
         let argsToCall = [startIdx, endIdx];
+        const argsToCallLookback = [];
         const arraysToRelease = [];
 
         RequiredInputArguments
             .forEach((ria) => {
-                let argArray = cArray(Module, endIdx - startIdx);
-                const dataToCall = dataToCallFunction[
-                    ria.name
-                ];
-                dataToCall.forEach((v, i) => argArray.data[i] = v);
+                const dataToCall = dataToCallFunction[ria.name].slice(startIdx, endIdx + 1);
+                let argArray = cArray(Module, dataToCall);
+                // dataToCall.forEach((v, i) => argArray.data[i] = v);
 
                 arraysToRelease.push(argArray);
                 argsToCall.push(argArray.offset);
@@ -136,6 +145,9 @@ module.exports = (Module, functionDescr) => {
         OptionalInputArguments
             .forEach((oia) => {
                 argsToCall.push(
+                    dataToCallFunction[oia.name]
+                );
+                argsToCallLookback.push(
                     dataToCallFunction[oia.name]
                 );
             });
@@ -157,14 +169,15 @@ module.exports = (Module, functionDescr) => {
             });
 
         const returnCode = cwrapFunction(...argsToCall);
+        const lookback = cwrapFunctionLookback(...argsToCallLookback);
 
         arraysToRelease.forEach((arr) => {
-            Module._free(arr.offset);
+            Module._free(arr.offset / 8);
         });
 
         const result = outputArrays
             .reduce((result, current) => {
-                result[current.name] = current.array.data;
+                result[current.name] = Array.prototype.slice.call(current.array.data, 0, endIdx - lookback + 1);
                 return result;
             }, {});
 
@@ -174,9 +187,34 @@ module.exports = (Module, functionDescr) => {
         return result;
     };
 
+    wrappedFunctionLookback = (optionsToCall) => {
+        const dataToCallFunction = {
+            ...optionsToCall
+        };
+
+        OptionalInputArguments
+            .forEach((oia) => {
+                if (!dataToCallFunction[oia.name]) {
+                    dataToCallFunction[oia.name] = oia.defaultValue;
+                }
+            });
+
+        const argsToCallLookback = [];
+
+        OptionalInputArguments
+            .forEach((oia) => {
+                argsToCallLookback.push(
+                    dataToCallFunction[oia.name]
+                );
+            });
+
+        return cwrapFunctionLookback(...argsToCallLookback);
+    };
+
     return {
         funcName: Abbreviation,
         wrappedFunction,
+        wrappedFunctionLookback,
         description: {
             RequiredInputArguments,
             OptionalInputArguments,

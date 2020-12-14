@@ -17,8 +17,9 @@ module.exports = Promise.all([
         const descriptions ={};
 
         return talibFunctions.reduce((result, current) => {
-            const {funcName, wrappedFunction, description} = wrapTalibFunction(Module, current);
+            const {funcName, wrappedFunction, wrappedFunctionLookback, description} = wrapTalibFunction(Module, current);
             result[funcName] = wrappedFunction;
+            result[funcName + 'Lookback'] = wrappedFunctionLookback;
 
             descriptions[funcName] = description;
 
