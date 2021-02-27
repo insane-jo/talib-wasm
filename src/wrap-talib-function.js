@@ -152,8 +152,10 @@ module.exports = (Module, functionDescr) => {
                 );
             });
 
-        argsToCall.push(0); // outBegIdx
-        argsToCall.push(0); // outNBElement
+        const outBegIdxPointer = Module._malloc(8);
+        const outNBElementPointer = Module._malloc(8);
+        argsToCall.push(outBegIdxPointer); // outBegIdx
+        argsToCall.push(outNBElementPointer); // outNBElement
 
         const outputArrays = OutputArguments
             .map((oa) => {
@@ -174,6 +176,9 @@ module.exports = (Module, functionDescr) => {
         arraysToRelease.forEach((arr) => {
             Module._free(arr.offset / 8);
         });
+
+        Module._free(outBegIdxPointer);
+        Module._free(outNBElementPointer);
 
         const result = outputArrays
             .reduce((result, current) => {
