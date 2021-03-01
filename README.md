@@ -150,6 +150,16 @@ npm run build
 
 ## Modules versions
 
+### Version 3.0.1
+* Bugfix with nested C-functions (ffi) + tests
+
+```
+emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 2.0.14
+clang version 12.0.0
+node (EMSDK_NODE) version - 15.10.0
+python (EMSDK_PYTHON) version - 3.9.2
+```
+
 ### Version 3.0.0
 * Result arrays now not contain blank fields at the end. Length of result array in version 2.x can be different with version 3.x
 * Result arrays now are not Float64Array.
